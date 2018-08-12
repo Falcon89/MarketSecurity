@@ -25,14 +25,14 @@
                         </a>
                     </div>
                     <div class="login-form">
-                        <form action="" method="post">
+                        <form action="login" method="post">
                             <div class="form-group">
                                 <label>Email Address</label>
-                                <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                <input class="au-input au-input--full" type="text" name="email" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                <input class="au-input au-input--full" type="password" name="psw" placeholder="Password">
                             </div>
                             <div class="login-checkbox">
                                 <label>
@@ -49,6 +49,7 @@
                                     <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
                                 </div>
                             </div>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         </form>
                         <div class="register-link">
                             <p>

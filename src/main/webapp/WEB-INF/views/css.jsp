@@ -7,14 +7,15 @@
 
 <!-- Bootstrap CSS-->
 <link href="${pageContext.request.contextPath}/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
-<!-- Main CSS-->
-<link href="${pageContext.request.contextPath}/css/theme.css" rel="stylesheet" media="all">
+
+<!-- Vendor CSS-->
 <link href="${pageContext.request.contextPath}/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-<link href="${pageContext.request.contextPath}/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+<link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/wow/animate.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/slick/slick.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/select2/select2.min.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+<!-- Main CSS-->
+<link href="${pageContext.request.contextPath}/css/theme.css" rel="stylesheet" media="all">
