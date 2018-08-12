@@ -25,14 +25,14 @@
                         </a>
                     </div>
                     <div class="login-form">
-                        <form action="login" method="post">
+                        <form action="<c:url value="/login"/>" method="POST">
                             <div class="form-group">
                                 <label>Email Address</label>
-                                <input class="au-input au-input--full" type="text" name="email" placeholder="Email">
+                                <input class="au-input au-input--full" type="text" name="username" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input class="au-input au-input--full" type="password" name="psw" placeholder="Password">
+                                <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                             </div>
                             <div class="login-checkbox">
                                 <label>
