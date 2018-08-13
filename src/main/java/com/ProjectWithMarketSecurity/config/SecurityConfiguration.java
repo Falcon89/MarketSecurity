@@ -29,18 +29,11 @@ import java.io.IOException;
  * Created by admin on 2/3/2018.
  */
 @Configuration
-@EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
-       // web.ignoring().mvcMatchers("/vendor/*", "/js/*", "/css/*", "/images/**", "/fonts.poppins/**", "/fonts");
+        web.ignoring().antMatchers("/fonts/**","/vendor/**", "/js/**", "/css/**", "/images/**");
 
-    }
-
-    private CsrfTokenRepository csrfTokenRepository() {
-        HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
-        repository.setSessionAttributeName("_csrf");
-        return repository;
     }
 
     @Bean
@@ -50,25 +43,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-         RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-
-
-        http.authorizeRequests()
-
-                .antMatchers( "/registration").permitAll()
+        http.csrf().disable().authorizeRequests()
+                .antMatchers("/registration").permitAll()
                 .anyRequest().authenticated()
-                .and().formLogin()
-                .loginPage("/login")
-                .permitAll()
+                .and()
+                .formLogin().loginPage("/login").permitAll()
                 .and()
                 .logout().logoutUrl("/logout").permitAll();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("kop").password("123").roles("USER");
+        auth.inMemoryAuthentication().withUser("admin").password("123").roles("USER");
     }
-
-
 }
