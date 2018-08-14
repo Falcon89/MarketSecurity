@@ -32,7 +32,7 @@
                         </a>
                     </div>
                     <div class="login-form">
-                        <form action="" method="post">
+                        <form action="/register" method="post">
                             <div class="form-group">
                                 <label>Username</label>
                                 <input class="au-input au-input--full" type="text" name="username" placeholder="Username">

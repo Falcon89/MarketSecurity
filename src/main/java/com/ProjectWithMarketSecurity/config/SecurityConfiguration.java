@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -23,6 +24,7 @@ import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 
 /**
@@ -30,6 +32,8 @@ import java.io.IOException;
  */
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+@Autowired
+    UserDetailsService userDetailsService;
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/fonts/**","/vendor/**", "/js/**", "/css/**", "/images/**");
@@ -54,6 +58,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("admin").password("123").roles("USER");
+        auth.userDetailsService(userDetailsService);
     }
 }
