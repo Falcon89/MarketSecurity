@@ -1,8 +1,9 @@
 package com.ProjectWithMarketSecurity.serviceImpl;
 
 import com.ProjectWithMarketSecurity.dao.UserDao;
-import com.ProjectWithMarketSecurity.dto.RegisterUserDto;
-import com.ProjectWithMarketSecurity.dto.Role;
+
+import com.ProjectWithMarketSecurity.entity.Role;
+import com.ProjectWithMarketSecurity.entity.User;
 import com.ProjectWithMarketSecurity.service.UserService;
 
 
@@ -18,25 +19,28 @@ import java.util.List;
 public class UserServiceImpl implements UserDetailsService, UserService {
     @Autowired
     private UserDao userDao;
+
     @Autowired
     private BCryptPasswordEncoder encoder;
-
     @Override
-    public void save(RegisterUserDto registerUserDto) {
-
-        registerUserDto.setPassword(encoder.encode(registerUserDto.getPassword()));
-        registerUserDto.setRole(Role.ROLE_USER);
-        userDao.save(registerUserDto);
-
+    public void save(User user) {
+user.setPassword(encoder.encode(user.getPassword()));
+user.setRole(Role.ROLE_USER);
+userDao.save(user);
     }
 
     @Override
-    public List<RegisterUserDto> findAll() {
+    public List<User> findAll() {
         return null;
     }
 
     @Override
-    public RegisterUserDto findOne(long id) {
+    public User findOne(long id) {
+        return null;
+    }
+
+    @Override
+    public User findByName(String name) {
         return null;
     }
 
@@ -44,7 +48,6 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     public void delete(long id) {
 
     }
-
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {

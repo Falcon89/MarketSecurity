@@ -23,15 +23,36 @@ import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsService userDetailsService;
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/fonts/**","/vendor/**", "/js/**", "/css/**", "/images/**");
 
     }
+    @Autowired
+    public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+        authenticationManagerBuilder
+                .userDetailsService(this.userDetailsService)
+                .passwordEncoder(passwordEncoder());
+    }
     @Bean
-    public PasswordEncoder bcryptPasswordEncoder() {
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    private CsrfTokenRepository csrfTokenRepository()
+    {
+        HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
+        repository.setSessionAttributeName("_csrf");
+        return repository;
+    }
+    @Bean
+    public UserDetailsService UserDetailsService() {
+        return super.userDetailsService();
+    }
+//    @Bean
+//    public PasswordEncoder bcryptPasswordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
     @Bean
     public PasswordEncoder encoder() {
         return NoOpPasswordEncoder.getInstance();
@@ -50,6 +71,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        auth
+//                .userDetailsService(userDetailsService);
+                .inMemoryAuthentication()
+                .withUser("admin").password("admin").roles("ADMIN");
     }
 }

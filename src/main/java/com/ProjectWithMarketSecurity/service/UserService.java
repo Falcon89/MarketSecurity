@@ -1,19 +1,17 @@
 package com.ProjectWithMarketSecurity.service;
 
-import com.ProjectWithMarketSecurity.dto.RegisterUserDto;
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.ProjectWithMarketSecurity.entity.User;
 
 import java.util.List;
 
 public interface UserService {
-//    void update(RegisterUserDto registerUserDto);
+    void save(User user);
 
-    void save(RegisterUserDto registerUserDto);
+    List<User> findAll();
 
-    List<RegisterUserDto> findAll();
+    User findOne(long id);
 
-    RegisterUserDto findOne(long id);
+    User findByName(String name);
 
     void delete(long id);
 

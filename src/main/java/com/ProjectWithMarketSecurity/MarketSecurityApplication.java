@@ -3,13 +3,19 @@ package com.ProjectWithMarketSecurity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+//import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+//import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.stereotype.Component;
 
+@Component
 @SpringBootApplication
+
 public class MarketSecurityApplication extends SpringBootServletInitializer {
+
 	// Override the configure method from the SpringBootServletInitializer class
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
@@ -20,10 +26,8 @@ public class MarketSecurityApplication extends SpringBootServletInitializer {
 
 		return new PropertySourcesPlaceholderConfigurer();
 	}
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(MarketSecurityApplication.class, args);
 	}
