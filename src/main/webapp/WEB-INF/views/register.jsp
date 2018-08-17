@@ -32,18 +32,25 @@
                         </a>
                     </div>
                     <div class="login-form">
-                        <form action="/register" method="post">
+
+                        <form:form method="POST" action="/register" modelAttribute="regDto">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
+                                <form:label path="name">Name</form:label>
+                                <form:input cssClass="au-input au-input--full" path="username"/>
                             </div>
                             <div class="form-group">
-                                <label>Email Address</label>
-                                <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                <form:label path="name">Email Address</form:label>
+                                <form:input  cssClass="au-input au-input--full" path="email"/>
+                                <%--<label>Email Address</label>--%>
+                                <%--<input class="au-input au-input--full" type="email" name="email" placeholder="Email">--%>
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                <form:label path="name">Password</form:label>
+                                <form:input  cssClass="au-input au-input--full" path="password"/>
+
+                                <%--<label>Password</label>--%>
+                                <%--<input class="au-input au-input--full" type="password" name="password"--%>
+                                       <%--placeholder="Password">--%>
                             </div>
                             <div class="login-checkbox">
                                 <label>
@@ -53,15 +60,16 @@
                             <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
                             <div class="social-login-content">
                                 <div class="social-button">
-                                    <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+                                    <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook
+                                    </button>
                                     <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
                                 </div>
                             </div>
-                        </form>
+                        </form:form>
                         <div class="register-link">
                             <p>
                                 Already have account?
-                                <a href="#">Sign In</a>
+                                <a href="${pageContext.request.contextPath}/login">Sign In</a>
                             </p>
                         </div>
                     </div>

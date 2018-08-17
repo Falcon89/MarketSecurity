@@ -1,6 +1,7 @@
 package com.ProjectWithMarketSecurity.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,59 +12,25 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Collection;
-@Entity
+import java.util.Set;
+
 @Data
-@AllArgsConstructor
-public class User implements UserDetails, Serializable {
+@Builder
+@Entity(name = "user")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-    @NotNull
-    @Size(min=2, max=30 , message="User name >3 and <30")
+    @Column(name = "username")
     private String username;
-    @Email
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
+    @Column(name = "enble")
+    private boolean enable;
 
-
-    @Enumerated
-    private Role role;
-
-    public User(@NotNull @Size(min = 2, max = 30, message = "User name >3 and <30") String username, @Email String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-//        this.role = role;
-    }
-
-
-    public User() {
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
+    @Transient
+    private Set<Role> roleUser;
 }

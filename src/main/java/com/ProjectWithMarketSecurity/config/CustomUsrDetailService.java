@@ -1,8 +1,11 @@
 package com.ProjectWithMarketSecurity.config;
 
+import com.ProjectWithMarketSecurity.config.userdetails.CustomUserDetails;
+import com.ProjectWithMarketSecurity.entity.User;
+import com.ProjectWithMarketSecurity.repository.UserRepository;
 import lombok.extern.apachecommons.CommonsLog;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,23 +20,22 @@ import java.util.TreeMap;
 @Component
 public class CustomUsrDetailService implements UserDetailsService {
 
-    private Map<String, UserDetails> myUsers;
-
-    public CustomUsrDetailService() {
-        myUsers = new TreeMap<>();
-        myUsers.put("user1", new User("user1", "123", Arrays.asList(new SimpleGrantedAuthority("USER"))));
-    }
+    @Autowired
+    UserRepository userRepository;
 
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return Optional.ofNullable(myUsers.get(username))
-                .orElseThrow(() -> new UsernameNotFoundException("Not fount"));
-    }
+        User user = userRepository.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("User Not Found");
+        }
 
-
-    {
-
-
+        return CustomUserDetails.builder()
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .enabled(user.isEnable())
+                .authorities(Arrays.asList(new SimpleGrantedAuthority("USER")))
+                .build();
     }
 }

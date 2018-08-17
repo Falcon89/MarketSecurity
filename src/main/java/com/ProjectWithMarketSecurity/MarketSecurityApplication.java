@@ -11,22 +11,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
-@Component
 @SpringBootApplication
-
-public class MarketSecurityApplication extends SpringBootServletInitializer {
-
-	// Override the configure method from the SpringBootServletInitializer class
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(MarketSecurityApplication.class);
-	}
-	@Bean
-	public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
-
-		return new PropertySourcesPlaceholderConfigurer();
-	}
-
+public class MarketSecurityApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MarketSecurityApplication.class, args);

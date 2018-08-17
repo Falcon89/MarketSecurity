@@ -1,5 +1,10 @@
 package com.ProjectWithMarketSecurity.entity;
 
-public enum Role {
-    ROLE_ADMIN, ROLE_USER, ROLE_MANGER;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class Role {
+   private String role;
 }
