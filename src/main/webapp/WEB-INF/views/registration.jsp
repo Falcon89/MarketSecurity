@@ -20,6 +20,7 @@
 
     <jsp:include page="css.jsp"/>
 </head>
+<fmt:requestEncoding value="UTF-8"/>
 <body class="animsition">
 <div class="page-wrapper">
     <div class="page-content--bge5">
@@ -32,25 +33,28 @@
                         </a>
                     </div>
                     <div class="login-form">
-
-                        <form:form method="POST" action="/register" modelAttribute="regDto">
+                        <form action="/registration" method="post">
+                            <%--<form:form method="POST" action="/register" modelAttribute="regDto">--%>
                             <div class="form-group">
-                                <form:label path="name">Name</form:label>
-                                <form:input cssClass="au-input au-input--full" path="username"/>
+                                <%--<form:label path="name">Name</form:label>--%>
+                                <%--<form:input cssClass="au-input au-input--full" path="username"/>--%>
+                                <label>Name</label>
+                                <input class="au-input au-input--full" type="text" name="username"
+                                       placeholder="username">
                             </div>
                             <div class="form-group">
-                                <form:label path="name">Email Address</form:label>
-                                <form:input  cssClass="au-input au-input--full" path="email"/>
-                                <%--<label>Email Address</label>--%>
-                                <%--<input class="au-input au-input--full" type="email" name="email" placeholder="Email">--%>
+                                <%--<form:label path="name">Email Address</form:label>--%>
+                                <%--<form:input  cssClass="au-input au-input--full" path="email"/>--%>
+                                <label>Email Address</label>
+                                <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <form:label path="name">Password</form:label>
-                                <form:input  cssClass="au-input au-input--full" path="password"/>
+                                <%--<form:label path="name">Password</form:label>--%>
+                                <%--<form:input  cssClass="au-input au-input--full" path="password"/>--%>
 
-                                <%--<label>Password</label>--%>
-                                <%--<input class="au-input au-input--full" type="password" name="password"--%>
-                                       <%--placeholder="Password">--%>
+                                <label>Password</label>
+                                <input class="au-input au-input--full" type="password" name="password"
+                                       placeholder="Password">
                             </div>
                             <div class="login-checkbox">
                                 <label>
@@ -65,7 +69,9 @@
                                     <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
                                 </div>
                             </div>
-                        </form:form>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </form>
+                        <%--</form:form>--%>
                         <div class="register-link">
                             <p>
                                 Already have account?

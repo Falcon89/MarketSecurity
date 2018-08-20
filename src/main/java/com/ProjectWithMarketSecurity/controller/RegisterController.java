@@ -20,7 +20,12 @@ public class RegisterController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping(value = "/register")
+    @GetMapping("/registration")
+    public String registration() {
+        return "registration";
+    }
+
+    @PostMapping(value = "/registration")
     public String register(@ModelAttribute("regDto") @Valid RegisterUserDto dto, BindingResult result) {
         User user = userRepository.findByUsername(dto.getUsername());
         if (user != null) {

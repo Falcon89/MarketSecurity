@@ -23,21 +23,21 @@
 <body class="animsition">
 <div class="page-wrapper">
 <jsp:include page="header.jsp"/>
-<jsp:include page="sidebar.jsp"/>
+<%--<jsp:include page="sidebar.jsp"/>--%>
     <!-- PAGE CONTAINER-->
-    <div class="page-container">
+    <div class="page-container2">
         <jsp:include page="header2.jsp"/>
         <!-- MAIN CONTENT-->
+        <jsp:include page="sidebar.jsp"/>
         <div class="main-content">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="overview-wrap">
-                                <h2 class="title-1">overview</h2>
-                                <button class="au-btn au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-plus"></i>add item</button>
-                            </div>
+                            <%--<div class="overview-wrap">--%>
+                                <%--<h2 class="title-1">overview</h2>--%>
+
+                            <%--</div>--%>
                         </div>
                     </div>
                     <div class="row m-t-25">
@@ -85,7 +85,7 @@
 
 
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-12">
                             <!-- USER DATA-->
                             <div class="user-data m-b-30">
                                 <h3 class="title-3 m-b-30">
@@ -549,6 +549,8 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

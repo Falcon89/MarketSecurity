@@ -16,6 +16,7 @@
 <link href="${pageContext.request.contextPath}/vendor/slick/slick.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/select2/select2.min.css" rel="stylesheet" media="all">
 <link href="${pageContext.request.contextPath}/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+<link href="${pageContext.request.contextPath}/vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
 
 <!-- Main CSS-->
 <link href="${pageContext.request.contextPath}/css/theme.css" rel="stylesheet" media="all">
