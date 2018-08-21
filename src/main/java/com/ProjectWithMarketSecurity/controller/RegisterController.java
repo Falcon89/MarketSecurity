@@ -38,6 +38,6 @@ public class RegisterController {
                 .enable(true)
                 .build();
         userRepository.save(newuser);
-        return "/adminpanel";
+        return "/index";
     }
 }

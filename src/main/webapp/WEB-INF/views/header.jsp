@@ -10,14 +10,32 @@
                 <img src="images/icon/admin_rights.gif" alt="User" />
             </div>
             <h4 class="name">Vasyl</h4>
-            <a href="#">SEO</a>
+            <a>SEO</a>
+            <br>
+            <span class="role fff admin"> <a href="${pageContext.request.contextPath}/logout">logout</a></span>
+           <%--<button> <a href="${pageContext.request.contextPath}/logout">logout</a></button>--%>
         </div>
+
+        <style>
+            .fff a{
+                color: white;
+            }
+
+        </style>
         <nav class="navbar-sidebar2">
             <ul class="list-unstyled navbar__list">
 
                 <li>
-                    <a href="index.html">
+                    <a href="${pageContext.request.contextPath}/index">
                         <i class="fas fa-tachometer-alt"></i>Home</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/users">
+                        <i class="fas fa-tachometer-alt"></i>Users</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/project">
+                        <i class="fas fa-tachometer-alt"></i>Project Table</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">

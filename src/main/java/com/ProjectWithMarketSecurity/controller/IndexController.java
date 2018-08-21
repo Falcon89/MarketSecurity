@@ -11,4 +11,14 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping({"/users"})
+    public String users (){
+        return "users";
+    }
+
+    @GetMapping({"/project"})
+    public String project(){
+        return "project";
+    }
+
 }
