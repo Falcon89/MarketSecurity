@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -31,6 +32,6 @@ public class User {
     @Column(name = "enble")
     private boolean enable;
 
-    @Transient
-    private Set<Role> roleUser;
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Role> roleUser;
 }

@@ -28,7 +28,7 @@
                         <form action="<c:url value="/login"/>" method="POST">
                             <div class="form-group">
                                 <label>Email Address</label>
-                                <input class="au-input au-input--full" type="text" name="username" placeholder="Email">
+                                <input class="au-input au-input--full" type="text" name="username" placeholder="username">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
