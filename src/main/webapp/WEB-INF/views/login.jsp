@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                <input class="au-input au-input--full" type="password" name="password" placeholder="password">
                             </div>
                             <div class="login-checkbox">
                                 <label>

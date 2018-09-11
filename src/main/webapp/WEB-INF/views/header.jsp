@@ -37,54 +37,54 @@
                     <a href="${pageContext.request.contextPath}/project">
                         <i class="fas fa-tachometer-alt"></i>Project Table</a>
                 </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-trophy"></i>Features
-                        <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                    </a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-copy"></i>Pages
-                        <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                    </a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        <li>
-                            <a href="login.html">
-                                <i class="fas fa-sign-in-alt"></i>Login</a>
-                        </li>
-                        <li>
-                            <a href="register.html">
-                                <i class="fas fa-user"></i>Register</a>
-                        </li>
-                        <li>
-                            <a href="forget-pass.html">
-                                <i class="fas fa-unlock-alt"></i>Forget Password</a>
-                        </li>
-                    </ul>
-                </li>
+                <%--<li class="has-sub">--%>
+                    <%--<a class="js-arrow" href="#">--%>
+                        <%--<i class="fas fa-trophy"></i>Features--%>
+                        <%--<span class="arrow">--%>
+                                    <%--<i class="fas fa-angle-down"></i>--%>
+                                <%--</span>--%>
+                    <%--</a>--%>
+                    <%--<ul class="list-unstyled navbar__sub-list js-sub-list">--%>
+                        <%--<li>--%>
+                            <%--<a href="table.html">--%>
+                                <%--<i class="fas fa-table"></i>Tables</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="form.html">--%>
+                                <%--<i class="far fa-check-square"></i>Forms</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="#">--%>
+                                <%--<i class="fas fa-calendar-alt"></i>Calendar</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="map.html">--%>
+                                <%--<i class="fas fa-map-marker-alt"></i>Maps</a>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
+                <%--<li class="has-sub">--%>
+                    <%--<a class="js-arrow" href="#">--%>
+                        <%--<i class="fas fa-copy"></i>Pages--%>
+                        <%--<span class="arrow">--%>
+                                    <%--<i class="fas fa-angle-down"></i>--%>
+                                <%--</span>--%>
+                    <%--</a>--%>
+                    <%--<ul class="list-unstyled navbar__sub-list js-sub-list">--%>
+                        <%--<li>--%>
+                            <%--<a href="login.html">--%>
+                                <%--<i class="fas fa-sign-in-alt"></i>Login</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="register.html">--%>
+                                <%--<i class="fas fa-user"></i>Register</a>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<a href="forget-pass.html">--%>
+                                <%--<i class="fas fa-unlock-alt"></i>Forget Password</a>--%>
+                        <%--</li>--%>
+                    <%--</ul>--%>
+                <%--</li>--%>
 
 
             </ul>
