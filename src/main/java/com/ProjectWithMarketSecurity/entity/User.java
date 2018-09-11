@@ -32,6 +32,6 @@ public class User {
     @Column(name = "enble")
     private boolean enable;
 
-    @OneToMany (cascade = CascadeType.ALL, mappedBy = "user")
+    @OneToMany (cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private List<Role> roleUser;
 }

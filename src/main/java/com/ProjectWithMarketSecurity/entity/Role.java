@@ -19,6 +19,9 @@ public class Role {
     @JoinColumn(name = "user.id")
     private User user;
 
+    public Role(){}
+
+
     public Role(String role, User user) {
         this.role = role;
         this.user = user;
